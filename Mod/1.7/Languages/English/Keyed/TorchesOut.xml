@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TorchesOut_ToggleTorchLabel>Toggle torch</TorchesOut_ToggleTorchLabel>
+  <TorchesOut_ToggleTorchDesc>Designate this torch to be lit or put out by a colonist.</TorchesOut_ToggleTorchDesc>
+  <TorchesOut_AlwaysOn>Always on</TorchesOut_AlwaysOn>
+  <TorchesOut_AlwaysOnDesc>When checked, this torch is never put out automatically: not when its room empties, by day, or when nobody is near.</TorchesOut_AlwaysOnDesc>
+
+  <TorchesOut_RelightOnEnter>Relight torches when a colonist enters a dark indoor room</TorchesOut_RelightOnEnter>
+  <TorchesOut_OnlyWhenEmpty>Only turn torches off if the room is empty</TorchesOut_OnlyWhenEmpty>
+  <TorchesOut_OnlyWhenEmptyDesc>If disabled, torches go out whenever anyone leaves the room, even if others remain.</TorchesOut_OnlyWhenEmptyDesc>
+
+  <TorchesOut_OffInDaytime>Turn off outdoor torches during the day</TorchesOut_OffInDaytime>
+  <TorchesOut_OffInDaytimeDesc>Outdoor torches go out while the sun is up. Indoor torches are not affected.</TorchesOut_OffInDaytimeDesc>
+  <TorchesOut_OutdoorOnlyNearPeople>Outdoor torches only stay lit near people</TorchesOut_OutdoorOnlyNearPeople>
+  <TorchesOut_OutdoorOnlyNearPeopleDesc>At night, an outdoor torch only burns while a colonist, prisoner or patient is within its light, and relights when someone comes near, quickly enough that nobody gets the darkness mood penalty. An unlit torch loses no fuel to rain or snow. Indoor torches are not affected.</TorchesOut_OutdoorOnlyNearPeopleDesc>
+
+  <TorchesOut_OffDelay>Update interval: {0} ticks ({1} s at normal speed)</TorchesOut_OffDelay>
+  <TorchesOut_OffDelayDesc>How long an indoor room must stay empty before its torches go out, and how often outdoor torches check for daylight and nearby people. Absorbs pawns stepping in and out of doorways. Raise it if torches toggle too often on a busy map; 0 = instant.</TorchesOut_OffDelayDesc>
+  <TorchesOut_DebugLogging>Debug logging</TorchesOut_DebugLogging>
+</LanguageData>

@@ -1,0 +1,36 @@
+[h1]TorchesOut[/h1]
+Sick of torches burning with no colonists around and using up all your wood? Well, now they don't.
+
+[h1]Features[/h1]
+[list]
+[*]The last colonist out of a room puts out its torches, and the next one in lights them back up.
+[*]Prisoners, and patients in medical beds, are never left in the dark.
+[*]Outdoor torches go out during the day.
+[*]At night, outdoor torches light up as soon as someone comes into their light radius, so they don't waste fuel when no one's around.
+[*]Mark any torch "Always on" to keep it lit no matter what.
+[*]Torches you switch off yourself stay off.
+[/list]
+
+[h1]Mod Options[/h1]
+[list]
+[*]Relight torches when a colonist walks into a dark room.
+[*]Only put torches out once a room is completely empty.
+[*]Only keep outdoor torches lit near colonists.
+[*]Turn off outdoor torches during the day.
+[*]Update interval: how long a room stays empty before its torches go out, and how often outdoor torches check for daylight and nearby people.
+[/list]
+
+[h1]Save Compatibility[/h1]
+Safe to add to or remove from an existing save.
+
+[h1]Performance[/h1]
+Built with performance in mind: torches only react when someone changes rooms, and outdoor torches check for daylight and nearby people every 30 ticks (configurable in the mod options).
+
+[h1]Bugs / Feedback[/h1]
+Please report bugs, compatibility issues and suggestions in the [b]discussions[/b] below.
+
+[h1]Requirements[/h1]
+[list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077]Harmony[/url]
+[*]RimWorld 1.7
+[/list]

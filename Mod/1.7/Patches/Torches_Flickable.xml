@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Vanilla torches have no on/off switch. Add CompFlickable to each, unless another mod already did.
+     TorchWallLamp declares <comps Inherit="False">, so it does not inherit from TorchLamp and needs its own patches.
+     <success>Always</success>: if another mod removes or replaces a torch def, skip silently instead of logging an error. -->
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <success>Always</success>
+    <xpath>Defs/ThingDef[defName="TorchLamp" or @Name="TorchBase"]/comps/li[@Class="CompProperties_Flickable"]</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="TorchLamp"]/comps</xpath>
+      <value>
+        <li Class="CompProperties_Flickable">
+          <commandLabelKey>TorchesOut_ToggleTorchLabel</commandLabelKey>
+          <commandDescKey>TorchesOut_ToggleTorchDesc</commandDescKey>
+        </li>
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <success>Always</success>
+    <xpath>Defs/ThingDef[defName="TorchWallLamp"]/comps/li[@Class="CompProperties_Flickable"]</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="TorchWallLamp"]/comps</xpath>
+      <value>
+        <li Class="CompProperties_Flickable">
+          <commandLabelKey>TorchesOut_ToggleTorchLabel</commandLabelKey>
+          <commandDescKey>TorchesOut_ToggleTorchDesc</commandDescKey>
+        </li>
+      </value>
+    </nomatch>
+  </Operation>
+
+  <!-- Our per-torch comp: "Always on" checkbox and the delayed switch-off. -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/ThingDef[defName="TorchLamp" or defName="TorchWallLamp"]/comps</xpath>
+    <value>
+      <li>
+        <compClass>TorchesOut.CompTorchesOut</compClass>
+      </li>
+    </value>
+  </Operation>
+</Patch>

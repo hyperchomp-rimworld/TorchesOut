@@ -1,0 +1,7 @@
+# macOS Finder metadata
+.DS_Store
+
+# Build output: rebuild with `dotnet build -c Release` in Source/
+Mod/1.7/Assemblies/*.dll
+bin/
+obj/

@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>TorchesOut</AssemblyName>
+    <RootNamespace>TorchesOut</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+
+    <!-- Drop the DLL straight into ../Mod/1.7/Assemblies with nothing else beside it. -->
+    <OutputPath>../Mod/1.7/Assemblies/</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <DebugType>none</DebugType>
+
+    <!-- Folder holding Assembly-CSharp.dll. Defaults to a macOS Steam install.
+         Override with: dotnet build -c Release -p:RimWorldManaged=/path/to/folder/ -->
+    <RimWorldManaged Condition="'$(RimWorldManaged)' == ''">$(HOME)/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorld.app/Contents/MacOS/</RimWorldManaged>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(RimWorldManaged)Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityStubs">
+      <HintPath>$(RimWorldManaged)UnityStubs.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Waylith">
+      <HintPath>$(RimWorldManaged)Waylith.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Harmony itself is provided at runtime by the Harmony mod (brrainz.harmony). -->
+    <PackageReference Include="Lib.Harmony" Version="3.0.0-rc.3" ExcludeAssets="runtime" />
+  </ItemGroup>
+
+</Project>
